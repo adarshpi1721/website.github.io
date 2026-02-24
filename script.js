@@ -1,6 +1,6 @@
 const textLines = [
     "hello",
-    "my name is adarsh"
+    "my name is adarsh pai"
 ];
 
 const terminal = document.getElementById('terminal');
