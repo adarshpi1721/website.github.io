@@ -3,16 +3,20 @@ const textLines = [
     "my name is adarsh"
 ];
 
-const terminal = document.getElementById('terminal');
-const navMenu = document.getElementById('nav-menu');
-
-terminal.innerHTML = '<span id="typed-text"></span><span class="cursor"></span>';
-const typedText = document.getElementById('typed-text');
-
 let lineIndex = 0;
 let charIndex = 0;
 
+// Initializes the terminal safely after the page loads
+function initTerminal() {
+    const terminal = document.getElementById('terminal');
+    terminal.innerHTML = '<span id="typed-text"></span><span class="cursor"></span>';
+    setTimeout(typeWriter, 300); // Brief pause before typing starts
+}
+
 function typeWriter() {
+    const typedText = document.getElementById('typed-text');
+    const navMenu = document.getElementById('nav-menu');
+
     if (lineIndex < textLines.length) {
         if (charIndex < textLines[lineIndex].length) {
             typedText.innerHTML += textLines[lineIndex].charAt(charIndex);
@@ -29,13 +33,12 @@ function typeWriter() {
     }
 }
 
-// New function to handle expanding the sub-menus
 function toggleMenu(event, menuId) {
-    event.preventDefault(); // Stops the page from refreshing or jumping
+    event.preventDefault(); 
     const menuToToggle = document.getElementById(menuId);
-    
-    // Toggles the 'hidden' class on the clicked sub-menu
-    menuToToggle.classList.toggle('hidden');
+    if (menuToToggle) {
+        menuToToggle.classList.toggle('hidden');
+    }
 }
 
-window.onload = typeWriter;
+window.onload = initTerminal;
