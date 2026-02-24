@@ -11,10 +11,42 @@
         <div id="terminal"></div>
         
         <div id="nav-menu" class="hidden">
-            <a href="#projects" class="nav-link">> Projects</a>
-            <a href="#experiences" class="nav-link">> Experiences</a>
-            <a href="#interests" class="nav-link">> Interests</a>
-            <a href="#contact" class="nav-link">> Contact</a>
+            <div class="menu-item">
+                <a class="nav-link" onclick="toggleMenu(event, 'projects-menu')">> Projects</a>
+                <div id="projects-menu" class="sub-menu hidden">
+                    <span>  ├── Morphing Wing Analysis</span>
+                    <span>  ├── VIV Suppression</span>
+                    <span>  ├── Ornithopter Design</span>
+                    <span>  └── Physical Vapour Deposition</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <a class="nav-link" onclick="toggleMenu(event, 'experiences-menu')">> Experiences</a>
+                <div id="experiences-menu" class="sub-menu hidden">
+                    <span>  ├── DHIO Research Intern (CFD)</span>
+                    <span>  ├── VP, Aerodynamics Club</span>
+                    <span>  └── Teaching Assistant (3 Courses)</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <a class="nav-link" onclick="toggleMenu(event, 'interests-menu')">> Interests</a>
+                <div id="interests-menu" class="sub-menu hidden">
+                    <span>  ├── Biomimicry (Fish/Bird Locomotion)</span>
+                    <span>  ├── Calisthenics & Sketching</span>
+                    <span>  ├── Japanese Language</span>
+                    <span>  └── Cinema</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <a class="nav-link" onclick="toggleMenu(event, 'contact-menu')">> Contact</a>
+                <div id="contact-menu" class="sub-menu hidden">
+                    <span>  ├── Email: adarsh@example.com</span>
+                    <span>  └── GitHub: @adarshpi1721</span>
+                </div>
+            </div>
         </div>
     </div>
 
