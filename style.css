@@ -4,14 +4,14 @@ body {
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
     margin: 0;
-    padding: 40px; /* Gives some space from the top and left edges */
+    padding: 40px; 
     box-sizing: border-box;
 }
 
 #terminal-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Forces content to the left */
+    align-items: flex-start; 
 }
 
 .cursor {
@@ -23,19 +23,19 @@ body {
     vertical-align: bottom;
 }
 
+/* Updated Menu Styles */
 #nav-menu {
-    display: none; /* Hidden until JS reveals it */
-    margin-top: 20px; /* Space between the typing and the menu */
-    display: flex;
-    flex-direction: column; /* Stacks the menu items vertically */
-    gap: 10px; /* Adds space between the menu items */
+    display: none; /* Stays completely hidden initially */
+    flex-direction: column; /* Forces items onto separate lines */
+    gap: 15px; /* Adds vertical space between links */
+    margin-top: 30px; 
 }
 
 .nav-link {
     color: #00FF41;
     text-decoration: none;
     padding: 2px 5px;
-    width: fit-content; /* Keeps hover effect tight to the text */
+    width: fit-content; 
 }
 
 .nav-link:hover {
