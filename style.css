@@ -4,7 +4,7 @@ body {
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
     margin: 0;
-    padding: 40px; /* Forces everything top-left with a clean border */
+    padding: 40px; /* Forces everything to the top left */
     box-sizing: border-box;
 }
 
@@ -26,16 +26,17 @@ body {
     background-color: #00FF41;
     animation: blink 1s infinite;
     vertical-align: bottom;
+    margin-left: 2px;
 }
 
-/* Base menu styling (vertical stack) */
+/* Menu styling (vertical stack) */
 #nav-menu {
     display: flex;
     flex-direction: column;
-    gap: 15px; 
+    gap: 15px; /* Space between each line */
 }
 
-/* Reliable hiding class */
+/* Hides the menu until JS reveals it */
 .hidden {
     display: none !important;
 }
@@ -49,7 +50,7 @@ body {
 
 .nav-link:hover {
     background-color: #00FF41;
-    color: black;
+    color: black; /* Inverts color on hover for a terminal feel */
 }
 
 @keyframes blink {
