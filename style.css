@@ -8,12 +8,13 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    text-shadow: 0 0 5px #00FF41; 
 }
 
-#terminal {
+#terminal-container {
     width: 80%;
     max-width: 600px;
+    display: flex;
+    flex-direction: column;
 }
 
 .cursor {
@@ -23,6 +24,23 @@ body {
     background-color: #00FF41;
     animation: blink 1s infinite;
     vertical-align: bottom;
+}
+
+#nav-menu {
+    display: none; /* Hidden initially */
+    margin-top: 20px;
+}
+
+.nav-link {
+    color: #00FF41;
+    text-decoration: none;
+    margin-right: 15px;
+    padding: 2px 5px;
+}
+
+.nav-link:hover {
+    background-color: #00FF41;
+    color: black;
 }
 
 @keyframes blink {
