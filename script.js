@@ -22,15 +22,16 @@ function typeWriter() {
             terminal.innerHTML = displayedText + '<span class="cursor"></span>';
             
             charIndex++;
-            setTimeout(typeWriter, 120); // 1.25x faster typing
+            setTimeout(typeWriter, 120); 
         } else {
             lineIndex++;
             charIndex = 0;
-            setTimeout(typeWriter, 400); // 1.25x faster line break
+            setTimeout(typeWriter, 400); 
         }
     } else {
-        // Animation complete, show the navigation menu
-        navMenu.style.display = 'block';
+        // Animation is completely finished
+        // Reveal the menu using 'flex' to keep the vertical column layout
+        navMenu.style.display = 'flex';
     }
 }
 
