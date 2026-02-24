@@ -4,6 +4,7 @@ const textLines = [
 ];
 
 const terminal = document.getElementById('terminal');
+const navMenu = document.getElementById('nav-menu');
 let lineIndex = 0;
 let charIndex = 0;
 
@@ -21,12 +22,15 @@ function typeWriter() {
             terminal.innerHTML = displayedText + '<span class="cursor"></span>';
             
             charIndex++;
-            setTimeout(typeWriter, 150); 
+            setTimeout(typeWriter, 120); // 1.25x faster typing
         } else {
             lineIndex++;
             charIndex = 0;
-            setTimeout(typeWriter, 500); 
+            setTimeout(typeWriter, 400); // 1.25x faster line break
         }
+    } else {
+        // Animation complete, show the navigation menu
+        navMenu.style.display = 'block';
     }
 }
 
