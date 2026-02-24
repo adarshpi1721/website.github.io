@@ -1,38 +1,58 @@
-const textLines = [
-    "hello",
-    "my name is adarsh"
-];
-
-const terminal = document.getElementById('terminal');
-const navMenu = document.getElementById('nav-menu');
-let lineIndex = 0;
-let charIndex = 0;
-
-function typeWriter() {
-    if (lineIndex < textLines.length) {
-        const currentLine = textLines[lineIndex];
-        
-        if (charIndex < currentLine.length) {
-            let displayedText = "";
-            for(let i = 0; i < lineIndex; i++) {
-                displayedText += textLines[i] + "<br>";
-            }
-            displayedText += currentLine.substring(0, charIndex + 1);
-            
-            terminal.innerHTML = displayedText + '<span class="cursor"></span>';
-            
-            charIndex++;
-            setTimeout(typeWriter, 120); 
-        } else {
-            lineIndex++;
-            charIndex = 0;
-            setTimeout(typeWriter, 400); 
-        }
-    } else {
-        // Animation is completely finished
-        // Reveal the menu using 'flex' to keep the vertical column layout
-        navMenu.style.display = 'flex';
-    }
+body {
+    background-color: black;
+    color: #00FF41; 
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    margin: 0;
+    padding: 40px; /* Forces everything top-left with a clean border */
+    box-sizing: border-box;
 }
 
-window.onload = typeWriter;
+#terminal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+
+#terminal {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 20px;
+    background-color: #00FF41;
+    animation: blink 1s infinite;
+    vertical-align: bottom;
+}
+
+/* Base menu styling (vertical stack) */
+#nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+/* Reliable hiding class */
+.hidden {
+    display: none !important;
+}
+
+.nav-link {
+    color: #00FF41;
+    text-decoration: none;
+    width: fit-content; 
+    padding: 2px 5px;
+}
+
+.nav-link:hover {
+    background-color: #00FF41;
+    color: black;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
