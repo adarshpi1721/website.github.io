@@ -1,0 +1,31 @@
+body {
+    background-color: black;
+    color: #00FF41; 
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-shadow: 0 0 5px #00FF41; 
+}
+
+#terminal {
+    width: 80%;
+    max-width: 600px;
+}
+
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 20px;
+    background-color: #00FF41;
+    animation: blink 1s infinite;
+    vertical-align: bottom;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
