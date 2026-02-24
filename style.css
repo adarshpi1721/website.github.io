@@ -4,7 +4,7 @@ body {
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
     margin: 0;
-    padding: 40px; 
+    padding: 40px; /* Positions everything at the top left */
     box-sizing: border-box;
 }
 
@@ -19,17 +19,24 @@ body {
     line-height: 1.5;
 }
 
+/* The blinking cursor */
 .cursor {
     display: inline-block;
     width: 10px;
     height: 20px;
     background-color: #00FF41;
     animation: blink 1s infinite;
-    vertical-align: middle; /* Moves cursor off the bottom line */
+    vertical-align: middle;
     margin-left: 2px;
-    transform: translateY(-2px); /* Fine-tunes it slightly higher */
+    transform: translateY(-2px);
 }
 
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Navigation Menu Layout */
 #nav-menu {
     display: flex;
     flex-direction: column;
@@ -41,27 +48,19 @@ body {
     flex-direction: column;
 }
 
-/* Styling for the expanded sub-menus */
-.sub-menu {
-    display: flex;
-    flex-direction: column;
-    margin-left: 20px;
-    margin-top: 10px;
-    gap: 5px;
-    color: #00cc33; /* Slightly darker green for hierarchy */
-    font-size: 18px;
-}
-
+/* Hide element utility class - critical for the click logic */
 .hidden {
     display: none !important;
 }
 
+/* Clickable Links */
 .nav-link {
     color: #00FF41;
     text-decoration: none;
     width: fit-content; 
     padding: 2px 5px;
     cursor: pointer;
+    user-select: none; /* Prevents ugly text highlighting when clicking rapidly */
 }
 
 .nav-link:hover {
@@ -69,7 +68,14 @@ body {
     color: black; 
 }
 
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+/* Sub-menu tree design */
+.sub-menu {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-top: 10px;
+    gap: 5px;
+    color: #00cc33; 
+    font-size: 18px;
+    white-space: pre; /* Forces the browser to respect the spaces in the tree branches */
 }
